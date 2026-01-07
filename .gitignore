@@ -59,6 +59,7 @@ reports/
 # Allure
 allure-results/
 allure-report/
+.allure/allure-2.24.0
 
 # Logs
 logs/
