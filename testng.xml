@@ -6,14 +6,16 @@
 		<listener
 			class-name="com.shaffan.listeners.AnnotationTransformer" />
 	</listeners>
+	
 	<test name="Login Functionality Tests">
 		<classes>
 			<class name="com.shaffan.tests.LoginTest">
 				<methods>
-					<include name="testLoginWithInvalidCreds" />
+					<include name="testLogin" />
 				</methods>
 			</class>
 			
 		</classes>
 	</test>
+	
 </suite>

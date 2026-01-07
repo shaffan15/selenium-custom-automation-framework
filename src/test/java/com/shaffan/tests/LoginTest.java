@@ -22,7 +22,7 @@ public class LoginTest extends BaseTest {
 
 	LoginPage login;
 
-	@DataProvider(name = "invalidLoginData", parallel = true)
+	@DataProvider(name = "invalidLoginData")
 	public static Object[][] invalidLoginData() {
 		return ExcelUtil.getExcelData("LoginData.xlsx", "Invalid Users");
 	}

@@ -10,6 +10,7 @@
 	<properties>
 		<allure.version>2.24.0</allure.version>
 		<aspectj.version>1.9.20.1</aspectj.version>
+		<suiteXmlFile>testng.xml</suiteXmlFile>
 	</properties>
 
 	<dependencies>
@@ -92,14 +93,13 @@
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
 					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
-						<!-- This maps a Maven property to an OS environment
-						variable -->
+						<!-- This maps a Maven property to an OS environment variable -->
 						<url>${target.url}</url>
 						<isHeadless>${target.isHeadless}</isHeadless>
-						<browser>${target.browser}</browser>
+						
 					</systemPropertyVariables>
 				</configuration>
 				<dependencies>
@@ -130,7 +130,6 @@
 			<properties>
 				<target.url>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</target.url>
 				<target.isHeadless>true</target.isHeadless>
-				<target.browser>chrome</target.browser>
 			</properties>
 		</profile>
 
