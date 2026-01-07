@@ -16,10 +16,14 @@ import org.testng.annotations.AfterMethod;
 public class BaseTest {
 
 
+	@Parameters({"browser"})
 	@BeforeMethod
-	public void setup() {
+	public void setup(@Optional String browser) {
 		
-		String browser = ConfigReader.getProperty("browser");
+		if(browser == null || browser.isEmpty()) {
+			browser = ConfigReader.getProperty("browser");
+		}
+		
 		boolean isHeadless = Boolean.parseBoolean(ConfigReader.getProperty("isHeadless"));
 		
 		DriverFactory.initDriver(browser, isHeadless);
